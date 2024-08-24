@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1B1B1D;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+a {
+  font-size: 3em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  animation: bounce 2s infinite;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out; /* Added a transition for smoother scaling */
+}
+.html{
+  
+}
+.clicked {
+  animation: clickAnimation 1s ease-out;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-25px); /* Adjusted the bounce height */
+  }
+  60% {
+      transform: translateY(-10px); /* Adjusted the bounce height */
+  }
+}
+
+@keyframes clickAnimation {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}

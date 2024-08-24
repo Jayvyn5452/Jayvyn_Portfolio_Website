@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    padding: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.fade-in {
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    background: #1B1B1D;
+}
+
+label {
+    font-size: 20px;
+    color: #fff;
+}
+
+/********************************SKILLS**************************************/
+
+.category {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ... (existing styles) ... */
+
+.skill {
+display: flex;
+align-items: center;
+width: 100%;
+margin-bottom: 20px;
+font-family: 'Roboto', sans-serif;
+}
+
+.skill-name {
+font-weight: bold;
+margin-right: 10px;
+
+}
+
+.skill-bar {
+flex: 1;
+height: 20px;
+background-color: #ddd;
+border-radius: 10px;
+position: relative;
+overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  animation: fillAnimation 1s ease-in-out;
+}
+
+@keyframes fillAnimation {
+  from {
+    width: 0;
+  }
+}
+
+/* Category-specific styling */
+.programming-languages .bar-fill {
+  background-color: #3498db; /* Blue */
+}
+
+.software .bar-fill {
+  background-color: #e74c3c; /* Red */
+}
+
+.operating-systems .bar-fill {
+  background-color: #f39c12; /* Orange */
+}
+
+
+
+
+/*****************************************************************/
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(168, 168, 168, 0.426);
+  box-shadow: 0 2px 4px rgba(132, 132, 132, 0.446);
+  font-family: 'Roboto', sans-serif;
+  z-index: 2;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-links {
+  font-size: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color:#ddb8f3 ; /* Add your desired underline color here */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+
+
+.menu-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .menu-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.198);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.148);
+  }
+
+  .menu-links.show {
+      display: flex;
+  }
+
+  .menu-icon {
+      display: flex;
+  }
+}
+
+
+img {
+  width: 150px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 10px;
+  color: #fff;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.container section {
+    margin-bottom: 150px;
+}
+/* Additional styles for the skills section if needed */
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0; /* Add padding to match your design */
+  background-color: #1B1B1D;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+
+
+.content.open {
+    margin-left: 250px;
+}
+
+
+.content {
+    margin-left: 0;
+    transition: 0.5s;
+}
+
+
+
+.typing-text {
+  
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    
+    letter-spacing: 2px;
+    animation: typing 6s steps(58) infinite;
+}
+
+.name {
+    color: #ddb8f3;
+}
+
+@keyframes typing {
+    0%, 20%, 100% {
+        width: 0;
+    }
+    30%, 70% {
+        width: 100%;
+    }
+}
+
+/***********************************************************************/
+#education { 
+  text-align: center;
+  margin-top: 50px;
+}
+
+.slider-container {
+  font-family: 'Roboto', sans-serif;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  
+ 
+}
+
+.education-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.education-item {
+  min-width: 100%;
+  padding: 150px;
+  box-sizing: border-box;
+  text-align: left;
+  background-color:#1B1B1D ;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.education-title {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.education-details {
+ 
+  font-size: 15px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  color: #333;
+  padding: 10px; /* Increased padding for wider arrows */
+  margin: 0 -25px; /* Increased margin for more space around the arrows */
+  transition: color 0.3s ease-in-out;
+}
+
+.slider-arrow:hover {
+  color: #ddb8f3;
+}
+
+.slider-arrow.left {
+  left: 20px;
+}
+
+.slider-arrow.right {
+  right: 20px;
+}
+
+/*****************************************************************************************************/
+
+/* Add this to your CSS file (style.css) */
+.projects-section {
+    background-color: #1B1B1D;
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px;
+   
+  }
+  
+  .project-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    background-color:  #1b1b1d90;
+  }
+  
+  .project-card img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .project-details {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .project-detail-card {
+    background-color: #616161;
+    padding: 20px;
+    width:500px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+
+  @keyframes onclick{
+
+  }
+  
+  .project-tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  
+  .project-tags li {
+    background-color: #ddb8f3;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 15px; /* Add a unit (e.g., px) here */
+}
+
+  
+  .project-links a {
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+  }
+  
+  .project-links a:hover {
+    background-color:#ddb8f3 ;
+    transition: background-color 0.3s ease; /* Adjust the duration and timing function as needed */
+}
+
+/* Your existing styles here */
+/* Your existing styles here */
+
+.coming-soon {
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+.coming-soon:hover {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  25%, 75% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+}
+
+/* Add this CSS to your stylesheet */
+.download-button {
+  border-radius: 25px;
+  background-color: #ddb8f3;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  margin-top:50px;
+  margin-right: 190px;
+  margin-left: 190px;
+}
+
+
+
+a .download-button:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+a .download-button:hover {
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
+a .download-button:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+   
+.wrapper{
+  display: inline-flex;
+
+}
+.wrapper .icon{
+  margin: 0 40px;
+  
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span{
+  display: block;
+  height: 60px;
+  width: 60px;
+  background: black;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span i{
+  line-height: 60px;
+  font-size: 25px;
+  color: white; /* Add this line to set the color to white */
+}
+.wrapper .icon .tooltip{
+  position: absolute;
+  top: 0;
+
+  font-family: 'Poppins', sans-serif;
+
+  background: #fff;
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 25px;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip{
+  top: -70px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.icon .tooltip:before{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover span{
+  color: #fff;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip{
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+
+.wrapper .gmail:hover span,
+.wrapper .gmail:hover .tooltip,
+.wrapper .gmail:hover .tooltip:before{
+  background: #30e14d;
+}
+.wrapper .github:hover span,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip:before{
+  background: #350db8;
+}
+.wrapper .linkedin:hover span,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip:before{
+  background: #3b87de;
+}
+
+/*  */
+#experience {
+    text-align: center;
+    background-color: #1B1B1D;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entry {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s, transform 0.5s;
+    cursor: pointer;
+}
+
+.entry:hover {
+    background-color: #000;
+    transform: translateY(-5px);
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.date {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ddb8f3;
+}
+
+.entry-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ddb8f3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%);
+    transition: background-color 0.5s;
+}
+
+.entry:hover .entry-dot {
+    background-color: #000;
+    transition: background-color 0.5s;
+}
+
+
+
+/*CSS for homepage exclusive */
+
